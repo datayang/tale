@@ -359,7 +359,7 @@ public final class Theme {
         int cid  = contents.getCid();
         int size = cid % 20;
         size = size == 0 ? 1 : size;
-        return "/templates/themes/default/static/img/rand/" + size + ".jpg";
+        return Commons.theme_url_cdn()+"/static/img/rand/" + size + ".jpg";
     }
 
     /**

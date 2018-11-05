@@ -165,8 +165,30 @@ public final class Commons {
     public static String theme_url(String sub) {
         return Commons.site_url(TEMPLATES + BaseController.THEME + sub);
     }
-
-
+	/**
+	 *    返回cnd主题URL
+	 * @return
+	 */
+   public static String theme_url_cdn() {
+	   		 String siteCdn = Commons.site_option("site_cdn");
+	       if(not_empty(siteCdn)) {
+	    	   	return siteCdn+TEMPLATES + BaseController.THEME;
+	       				}
+	       return Commons.site_url(TEMPLATES + BaseController.THEME);
+        }
+   /**
+    * 返回主题下的cdn文件路径
+    *
+    * @param sub
+    * @return
+    */
+   public static String theme_url_cdn(String sub) {
+	   		String siteCdn = Commons.site_option("site_cdn");
+       if(not_empty(siteCdn)) {
+    	   	return siteCdn+TEMPLATES + BaseController.THEME + sub;
+       				}
+       return Commons.site_url(TEMPLATES + BaseController.THEME + sub);
+   }
     /**
      * 返回gravatar头像地址
      *
